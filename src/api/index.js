@@ -8,6 +8,6 @@ export default function({ apiClient, authClient } = {}) {
 
 	return {
 		auth: new AuthAPI({ apiClient: authClient }),
-		medicines: new MedicinesAPI({ apiClient })
+		medicine: new MedicinesAPI({ apiClient })
 	};
 }
