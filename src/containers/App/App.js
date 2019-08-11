@@ -9,11 +9,9 @@ import withAuthentication from 'hoc/withAuthentication';
 import MedicinePage from 'containers/MedicinePage';
 import EditAddNewMedicineModal from 'containers/modals/EditAddNewMedicineModal';
 
-const App = ({ children }) => (
+const App = () => (
 	<Container maxWidth="lg" style={{ height: '100vh', position: 'relative' }}>
 		<CssBaseline />
-
-		{children}
 
 		<MedicinePage />
 

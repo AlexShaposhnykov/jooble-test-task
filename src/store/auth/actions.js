@@ -1,8 +1,9 @@
-import { getTypeWithModifiers } from 'store/utils';
+import { getType, getTypeWithModifiers } from 'store/utils';
 
 import api from 'apiSingleton';
 
 export const types = {
+	...getType('CLEAR_LOGIN_STATE'),
 	...getTypeWithModifiers('LOGIN')
 };
 
