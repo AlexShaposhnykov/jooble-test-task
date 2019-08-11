@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import { types } from './actions';
 
-const auth = (state = { authenticating: false, isAuthenticated: false, error: '' }, action) => {
+const login = (state = { authenticating: false, isAuthenticated: false, error: '' }, action) => {
 	switch (action.type) {
 		case types.LOGIN: {
 			return {
@@ -43,4 +43,4 @@ const auth = (state = { authenticating: false, isAuthenticated: false, error: ''
 	}
 };
 
-export default combineReducers({ auth });
+export default combineReducers({ login });
