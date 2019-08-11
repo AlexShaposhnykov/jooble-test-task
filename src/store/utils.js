@@ -1,8 +1,10 @@
-export const getTypeWithModifiers = (constant) => {
-	return {
-		[`${constant}`]: `${constant}`,
-		[`${constant}_REQUEST`]: `${constant}_REQUEST`,
-		[`${constant}_SUCCESS`]: `${constant}_SUCCESS`,
-		[`${constant}_FAILURE`]: `${constant}_FAILURE`
-	};
-};
+export const getType = (type) => ({
+	[`${type}`]: `${type}`
+});
+
+export const getTypeWithModifiers = (type) => ({
+	[`${type}`]: `${type}`,
+	[`${type}_REQUEST`]: `${type}_REQUEST`,
+	[`${type}_SUCCESS`]: `${type}_SUCCESS`,
+	[`${type}_FAILURE`]: `${type}_FAILURE`
+});

@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 
 import rootReducer from './rootReducer';
 
-const devtools = window.devToolsExtension || (() => (noop) => noop);
+const devtools = window.__REDUX_DEVTOOLS_EXTENSION__ || (() => (noop) => noop);
 
 export default function configureStore(initialState = {}) {
 	const enhancers = [ applyMiddleware(thunk), devtools() ];
