@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import { connect } from 'react-redux';
-
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import medicineValidations from 'config/validations/medicine';
@@ -16,10 +14,10 @@ export class EditAddMedicineForm extends Component {
 	static propTypes = {
 		initialFormValues: PropTypes.shape({
 			id: PropTypes.string,
-			code: PropTypes.string.isRequired,
-			name: PropTypes.string.isRequired,
-			price: PropTypes.number.isRequired,
-			shelfLife: PropTypes.number.isRequired,
+			code: PropTypes.string,
+			name: PropTypes.string,
+			price: PropTypes.string,
+			shelfLife: PropTypes.string,
 			compositionAndFormOfRelease: PropTypes.string,
 			indication: PropTypes.string,
 			сontraindications: PropTypes.string
@@ -200,6 +198,4 @@ EditAddMedicineForm.defaultProps = {
 	initialFormValues: {}
 };
 
-const mapStateToProps = (state) => ({});
-
-export default connect(mapStateToProps, null)(EditAddMedicineForm);
+export default EditAddMedicineForm;

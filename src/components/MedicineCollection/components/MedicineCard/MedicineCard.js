@@ -10,7 +10,7 @@ class MedicineCard extends PureComponent {
 			code: PropTypes.string.isRequired,
 			name: PropTypes.string.isRequired,
 			price: PropTypes.string.isRequired,
-			shelfLife: PropTypes.number.isRequired,
+			shelfLife: PropTypes.string.isRequired,
 			compositionAndFormOfRelease: PropTypes.string,
 			indication: PropTypes.string,
 			сontraindications: PropTypes.string

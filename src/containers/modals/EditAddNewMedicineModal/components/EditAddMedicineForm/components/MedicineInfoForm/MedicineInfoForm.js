@@ -16,7 +16,7 @@ const MedicineInfoForm = () => (
 						<TextField
 							{...field}
 							fullWidth
-							error={form.touched[field.name] && form.errors[field.name]}
+							error={Boolean(form.touched[field.name] && form.errors[field.name])}
 							helperText={<ErrorMessage name={field.name} />}
 						/>
 					)}
@@ -31,7 +31,7 @@ const MedicineInfoForm = () => (
 						<TextField
 							{...field}
 							fullWidth
-							error={form.touched[field.name] && form.errors[field.name]}
+							error={Boolean(form.touched[field.name] && form.errors[field.name])}
 							helperText={<ErrorMessage name={field.name} />}
 						/>
 					)}
@@ -46,7 +46,7 @@ const MedicineInfoForm = () => (
 						<TextField
 							{...field}
 							fullWidth
-							error={form.touched[field.name] && form.errors[field.name]}
+							error={Boolean(form.touched[field.name] && form.errors[field.name])}
 							helperText={<ErrorMessage name={field.name} />}
 						/>
 					)}
@@ -61,7 +61,7 @@ const MedicineInfoForm = () => (
 						<TextField
 							{...field}
 							fullWidth
-							error={form.touched[field.name] && form.errors[field.name]}
+							error={Boolean(form.touched[field.name] && form.errors[field.name])}
 							helperText={<ErrorMessage name={field.name} />}
 						/>
 					)}

@@ -26,8 +26,8 @@ class EditAddNewMedicineModal extends PureComponent {
 			id: PropTypes.string,
 			code: PropTypes.string.isRequired,
 			name: PropTypes.string.isRequired,
-			price: PropTypes.number.isRequired,
-			shelfLife: PropTypes.number.isRequired,
+			price: PropTypes.string.isRequired,
+			shelfLife: PropTypes.string.isRequired,
 			compositionAndFormOfRelease: PropTypes.string,
 			indication: PropTypes.string,
 			сontraindications: PropTypes.string

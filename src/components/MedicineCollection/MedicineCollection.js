@@ -15,14 +15,14 @@ export class MedicineCollectionContainer extends Component {
 		isMedicineLoading: PropTypes.bool.isRequired,
 		medicineList: PropTypes.arrayOf(
 			PropTypes.shape({
-				id: PropTypes.string.isRequired,
+				id: PropTypes.isRequired,
 				code: PropTypes.string.isRequired,
 				name: PropTypes.string.isRequired,
-				price: PropTypes.number.isRequired,
-				shelfLife: PropTypes.number.isRequired,
-				compositionAndFormOfRelease: PropTypes.string.isRequired,
-				indication: PropTypes.string.isRequired,
-				сontraindications: PropTypes.string.isRequired
+				price: PropTypes.string.isRequired,
+				shelfLife: PropTypes.string.isRequired,
+				compositionAndFormOfRelease: PropTypes.string,
+				indication: PropTypes.string,
+				сontraindications: PropTypes.string
 			})
 		).isRequired,
 		medicineLoadingError: PropTypes.string
