@@ -60,6 +60,14 @@ export const clearMedicineAddingState = () => (dispatch) => {
 	dispatch({ type: types.CLEAR_MEDICINE_ADDING_STATE });
 };
 
+export const updateMedicineInList = (medicine) => (dispatch, getState) => {
+	const allMedicine = getMedicineList(getState());
+	const indexOfMedicineToUpdate = allMedicine.findIndex((item) => item.id === medicine.id);
+	const updatedMedicine = Object.assign([], allMedicine, { [indexOfMedicineToUpdate]: medicine });
+
+	dispatch({ type: types.UPDATE_MEDICINE_IN_LIST, updatedMedicine });
+};
+
 export const editMedicineInList = (medicine) => async (dispatch, getState) => {
 	try {
 		dispatch({ type: types.EDIT_MEDICINE });
@@ -70,11 +78,7 @@ export const editMedicineInList = (medicine) => async (dispatch, getState) => {
 
 		dispatch({ type: types.EDIT_MEDICINE_SUCCESS });
 
-		const allMedicine = getMedicineList(getState());
-		const indexOfMedicineToUpdate = allMedicine.findIndex((item) => item.id === medicine.id);
-		const updatedMedicine = Object.assign([], allMedicine, { [indexOfMedicineToUpdate]: medicine });
-
-		dispatch({ type: types.UPDATE_MEDICINE_IN_LIST, updatedMedicine });
+		dispatch(updateMedicineInList(medicine));
 	} catch (error) {
 		dispatch({ type: types.EDIT_MEDICINE_FAILURE, error });
 	}
