@@ -21,7 +21,7 @@ class MedicinePage extends PureComponent {
 				<Fab
 					color="primary"
 					aria-label="add"
-					style={{ position: 'absolute', bottom: '24px', right: '24px' }}
+					style={{ position: 'fixed', bottom: '24px', right: '24px' }}
 					onClick={this.handleAddNewMedicineClick}
 				>
 					<AddIcon />
