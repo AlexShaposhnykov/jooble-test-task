@@ -1,18 +1,22 @@
 import React, { PureComponent, Fragment } from 'react';
 
-import { Box, CircularProgress } from '@material-ui/core';
-import MedicineCard from 'components/MedicineCard';
+import { Box, CircularProgress, Typography } from '@material-ui/core';
+import MedicineCard from '../MedicineCard';
 
 export class MedicineList extends PureComponent {
 	renderMedicine = () => {
-		const { medicine, onDelete, onEdit } = this.props;
+		const { medicine, isLoading, onDelete, onEdit } = this.props;
 
-		if (!medicine.length) {
-			return null;
+		if (!medicine.length && !isLoading) {
+			return (
+				<Typography variant="h6" align="center">
+					No medicine found
+				</Typography>
+			);
 		}
 
 		return medicine.map((data) => (
-			<MedicineCard key={medicine.id} medicine={data} onDelete={onDelete} onEdit={onEdit} />
+			<MedicineCard key={data.id} medicine={data} onDelete={onDelete} onEdit={onEdit} />
 		));
 	};
 
@@ -21,7 +25,7 @@ export class MedicineList extends PureComponent {
 
 		return (
 			<Fragment>
-				<Box pt={3} display="flex" justifyContent="center">
+				<Box pt={3} display="flex" justifyContent="center" flexDirection="column">
 					{this.renderMedicine()}
 				</Box>
 

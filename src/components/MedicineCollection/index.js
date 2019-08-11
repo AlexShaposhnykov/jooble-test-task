@@ -1,1 +1,1 @@
-export { default } from './MedicineList';
+export { default } from './MedicineCollection';

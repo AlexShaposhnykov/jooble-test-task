@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import { fetchMedicine, deleteMedicineFromList } from 'store/medicines/actions';
-import { isMedicineLoading, getMedicineLoadingError, getMedicineList } from 'store/medicines/selectors';
+import { showModal } from 'store/modals/actions';
+import { fetchMedicine, deleteMedicineFromList } from 'store/medicine/actions';
+
+import { isMedicineLoading, getMedicineLoadingError, getMedicineList } from 'store/medicine/selectors';
 
 import MedicineList from './components/MedicineList';
 
-export class MedicineListContainer extends Component {
+export class MedicineCollectionContainer extends Component {
 	static propTypes = {
 		isMedicineLoading: PropTypes.bool.isRequired,
 		medicineList: PropTypes.arrayOf(
@@ -30,8 +32,10 @@ export class MedicineListContainer extends Component {
 		this.props.fetchMedicine();
 	}
 
-	handleMedicineEdit = (id, editedMedicine) => {
-		console.log(id);
+	handleMedicineEdit = (medicineToEdit) => {
+		const { showModal } = this.props;
+
+		showModal('EditAddNewMedicine', { initialFormValues: medicineToEdit });
 	};
 
 	handleMedicineDelete = (id) => {
@@ -59,6 +63,6 @@ const mapStateToProps = (state) => ({
 	medicineList: getMedicineList(state)
 });
 
-const mapDispatchToProps = { fetchMedicine, deleteMedicineFromList };
-
-export default connect(mapStateToProps, mapDispatchToProps)(MedicineListContainer);
+export default connect(mapStateToProps, { fetchMedicine, deleteMedicineFromList, showModal })(
+	MedicineCollectionContainer
+);

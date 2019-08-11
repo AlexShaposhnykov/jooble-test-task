@@ -1,4 +1,4 @@
-import MedicinesAPI from './Medicines';
+import MedicineAPI from './Medicine';
 import AuthAPI from './Auth';
 
 export default function({ apiClient, authClient } = {}) {
@@ -8,6 +8,6 @@ export default function({ apiClient, authClient } = {}) {
 
 	return {
 		auth: new AuthAPI({ apiClient: authClient }),
-		medicine: new MedicinesAPI({ apiClient })
+		medicine: new MedicineAPI({ apiClient })
 	};
 }
